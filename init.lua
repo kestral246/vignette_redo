@@ -2,7 +2,9 @@
 -- Adds a vignette filter to player's screen
 -- Based on concept by TriBlade9
 -- By David_G (kestral246@gmail.com)
--- Includes chat command "/vignette", which toggles effect off or on
+
+-- Don't enable vignette effect at start.
+-- Use chat command "/vignette" to enable, and then to toggle effect off or on.
 
 local vignette = {}
 
@@ -11,13 +13,13 @@ minetest.register_on_joinplayer(function(player)
 	vignette[pname] = {
 		id = player:hud_add({
 			hud_elem_type = "image",
-			text = "vignette.png",
+			text = "blank.png",
 			position = {x=0, y=0},
 			scale = {x=-100, y=-100},
 			alignment = {x=1, y=1},
 			offset = {x=0, y=0}
 		}),
-		enable = true }
+		enable = false }
 end)
 
 minetest.register_chatcommand("vignette", {
