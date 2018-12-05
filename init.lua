@@ -13,7 +13,7 @@ minetest.register_on_joinplayer(function(player)
 	vignette[pname] = {
 		id = player:hud_add({
 			hud_elem_type = "image",
-			text = "blank.png",
+			text = "",
 			position = {x=0, y=0},
 			scale = {x=-100, y=-100},
 			alignment = {x=1, y=1},
@@ -29,7 +29,7 @@ minetest.register_chatcommand("vignette", {
 	func = function(name, param)
 		local player = minetest.get_player_by_name(name)
 		if vignette[name].enable == true then
-			player:hud_change(vignette[name].id, "text", "blank.png")
+			player:hud_change(vignette[name].id, "text", "")
 			vignette[name].enable = false
 		else
 			player:hud_change(vignette[name].id, "text", "vignette.png")
