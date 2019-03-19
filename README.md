@@ -16,6 +16,8 @@ This mod defaults to not applying filter. To enable, use the chat command:
 
 Repeated use of this command will toggle the effect off and on.
 
+**New:** Now with local storage to maintain state of vignette filter between sessions.
+
 Licenses
 --------
 Source code
