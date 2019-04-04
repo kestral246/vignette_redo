@@ -1,12 +1,12 @@
--- vignette
--- Adds a vignette filter to player's screen
+-- vignette_redo
+-- Optionally place a vignette filter over the screen.
 -- Based on concept by TriBlade9
 -- By David_G (kestral246@gmail.com)
 -- 2019-03-19
 
--- Don't enable vignette effect at start.
+-- Vignette effect defaults to off at start.
 -- Use chat command "/vignette" to enable, and then to toggle effect off or on.
--- Add local storage to maintain state of vignette filter per user.
+-- Added local storage to maintain state of vignette filter per user.
 
 local vignette = {}
 local storage = minetest.get_mod_storage()
