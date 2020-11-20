@@ -2,11 +2,13 @@
 -- Optionally place a vignette filter over the screen.
 -- Based on concept by TriBlade9
 -- By David_G (kestral246@gmail.com)
--- 2019-03-19
 
 -- Vignette effect defaults to off at start.
 -- Use chat command "/vignette" to enable, and then to toggle effect off or on.
--- Added local storage to maintain state of vignette filter per user.
+-- Local storage maintains state of vignette filter per user.
+
+-- 2020-11-20
+-- Add z_index to HUD definition (issue 1)
 
 local vignette = {}
 local storage = minetest.get_mod_storage()
@@ -21,7 +23,8 @@ minetest.register_on_joinplayer(function(player)
 				position = {x=0, y=0},
 				scale = {x=-100, y=-100},
 				alignment = {x=1, y=1},
-				offset = {x=0, y=0}
+				offset = {x=0, y=0},
+				z_index = -400
 			}),
 			enable = true }
 	else  -- not enabled
@@ -32,7 +35,8 @@ minetest.register_on_joinplayer(function(player)
 				position = {x=0, y=0},
 				scale = {x=-100, y=-100},
 				alignment = {x=1, y=1},
-				offset = {x=0, y=0}
+				offset = {x=0, y=0},
+				z_index = -400
 			}),
 			enable = false }
 	end
